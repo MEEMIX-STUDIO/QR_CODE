@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>สร้าง QR Code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <style>
+    body {font-family:sans-serif; max-width:700px; margin:24px auto; padding:0 16px;}
+    #qrcode { margin-top:12px; position:relative; display:inline-block; }
+    .row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+    input { flex:1; padding:8px; }
+    button { padding:8px 12px; cursor:pointer; }
+  </style>
+</head>
+<body>
+
+<h2>สร้าง QR Code จาก URL</h2>
+
+<div class="row">
+  <input type="url" id="url" placeholder="กรอก URL" value="https://example.com">
+  <input type="number" id="size" value="300" min="100" max="1024" step="50" title="ขนาด (px)">
+</div>
+
+<div class="row">
+  <button id="gen">สร้าง QR</button>
+  <button id="download" disabled>ดาวน์โหลด PNG</button>
+</div>
+
+<div id="qrcode"></div>
+
+<script>
+let qr;
+const qrelement = document.getElementById('qrcode');
+
+function makeQR(text, size = 300){
+  qrelement.innerHTML = '';
+
+  qr = new QRCode(qrelement, {
+    text,
+    width: size,
+    height: size,
+    correctLevel: QRCode.CorrectLevel.L, // ทำให้ QR ไม่แตกรายละเอียดมากเกินไป
+    margin: 0
+  });
+}
+
+document.getElementById('gen').addEventListener('click', ()=>{
+  const url = document.getElementById('url').value.trim();
+  const size = parseInt(document.getElementById('size').value, 10) || 300;
+  if (!url) return alert('โปรดกรอก URL');
+
+  makeQR(url, size);
+  setTimeout(()=>document.getElementById('download').disabled = false, 200);
+});
+
+document.getElementById('download').addEventListener('click', ()=>{
+  const canvas = qrelement.querySelector('canvas');
+  if (!canvas) return alert('ไม่พบภาพสำหรับดาวน์โหลด');
+
+  const a = document.createElement('a');
+  a.href = canvas.toDataURL('image/png');
+  a.download = 'qrcode.png';
+  a.click();
+});
+
+// สร้างตัวอย่างเริ่มต้น
+makeQR(document.getElementById('url').value, 300);
+document.getElementById('download').disabled = false;
+</script>
+
+</body>
+</html>
