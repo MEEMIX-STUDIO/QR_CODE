@@ -1,43 +1,43 @@
 📱 QR_CODE
 
-โปรเจกต์นี้เป็นเว็บไซต์สร้างและแสดง QR Code ง่ายๆ ที่คุณสามารถนำไปใช้สร้างโค้ดจากข้อความ/ลิงก์ต่างๆ ได้อย่างรวดเร็ว โดยใช้เทคโนโลยีเว็บพื้นฐาน (HTML/CSS/JS)
+This project is a simple QR Code generator website that allows you to quickly create QR codes from text or URLs.
+It is built using basic web technologies (HTML, CSS, and JavaScript).
 
 .
 
-🎯 ฟีเจอร์หลัก
+🎯 Key Features
 
-✔️ สร้าง QR Code จากข้อความหรือ URL
-✔️ แสดงผล QR Code ทันทีบนหน้าเว็บ
-✔️ ใช้งานง่าย แค่พิมพ์ข้อมูล → คลิกสร้าง
-✔️ รองรับการพิมพ์/ดาวน์โหลดโค้ดเพื่อนำไปใช้งานจริง
+✔️ Generate QR Codes from text or URLs
+✔️ Instantly display the QR Code on the web page
+✔️ Easy to use — just type your data → click generate
+✔️ Supports printing or downloading the QR Code for real-world use
 
 .
 
-🚀 วิธีใช้งาน
+🚀 How to Use
 
-⭐ Clone หรือ ดาวน์โหลด ZIP จาก GitHub
+⭐ Clone or Download ZIP from GitHub
 
 git clone https://github.com/MEEMIX-STUDIO/QR_CODE.git
 
-📂 เปิดไฟล์ index.html ด้วยเว็บเบราว์เซอร์ (Chrome / Safari / Edge)
+📂 Open the index.html file in a web browser (Chrome / Safari / Edge)
 
-✍️ กรอกข้อความหรือลิงก์
+✍️ Enter your text or URL
 
-🔍 คลิกปุ่ม “Generate” เพื่อดูผล QR Code
-
-.
-
-🔄 ขยายโปรเจกต์ได้อย่างไร
-
-คุณสามารถพัฒนาฟีเจอร์เพิ่มเติม เช่น:
-
-✨ เลือกขนาด QR Code
-🎨 ปรับสีพื้นหลังและ Foreground
-📥 บันทึก/ดาวน์โหลดเป็น PNG/SVG
-📱 เพิ่มตัวสแกน QR Code ในหน้าเว็บ
+🔍 Click the “Generate” button to view the QR Code
 
 .
 
-💬 ขอบคุณที่มาใช้โปรเจกต์นี้!
+🔄 How to Extend the Project
 
-หากคุณชอบโปรเจกต์นี้ — อย่าลืม ⭐ Star และ Fork เพื่อสนับสนุน ✨
+You can enhance this project with additional features such as:
+
+✨ Select QR Code size
+🎨 Customize background and foreground colors
+📥 Save or download as PNG/SVG
+📱 Add a built-in QR Code scanner on the webpage
+
+.
+
+💬 Thank You for Using This Project!
+If you like this project, don’t forget to ⭐ Star and Fork it to show your support ✨
